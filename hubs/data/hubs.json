@@ -1,26 +1,464 @@
 {
-  "note": "This project now uses inline HUBS data in hubs/index.html. This JSON is kept only as a reference.",
   "defaultHub": "return",
   "hubs": [
     {
       "slug": "return",
-      "title": "귀환 허브"
+      "title": "귀환 허브",
+      "year": "BC 538~536",
+      "short": "고레스 칙령 · 1차 귀환",
+      "prev": null,
+      "next": "temple",
+      "prevLabel": "← Matrix로 돌아가기",
+      "nextLabel": "다음 허브: 성전 허브 →",
+      "kicker": "허브 01 · 귀환 허브",
+      "heroTitle": "귀환 허브",
+      "heroText": "고레스 칙령을 통해 포로귀환 시대가 열리고, 언약 백성의 회복이 시작됩니다.",
+      "tags": [
+        "고레스 칙령",
+        "스룹바벨",
+        "1차 귀환",
+        "성전 기초"
+      ],
+      "mainFlowTitle": "귀환 흐름",
+      "mainFlow": [
+        {
+          "icon": "📜",
+          "title": "고레스 칙령",
+          "text": "귀환과 성전 재건 허락"
+        },
+        {
+          "icon": "🚶",
+          "title": "1차 귀환",
+          "text": "스룹바벨 인도"
+        },
+        {
+          "icon": "🏙️",
+          "title": "예루살렘 도착",
+          "text": "무너진 터전으로 돌아옴"
+        },
+        {
+          "icon": "🧱",
+          "title": "성전 기초",
+          "text": "예배 회복의 출발"
+        }
+      ],
+      "map": "assets/maps/return-hub-map.png",
+      "mapTitle": "귀환 허브 지도",
+      "mapCaption": "바사 제국의 수산·바벨론 권역에서 예루살렘으로 이어지는 귀환의 길을 중심으로, 고레스 칙령 이후 스룹바벨과 예수아가 이끄는 1차 귀환 공동체가 무너진 성전 터로 돌아와 예배 회복의 첫걸음을 내딛는 흐름을 시각화합니다.",
+      "keyItems": [
+        {
+          "icon": "📌",
+          "title": "대표사건",
+          "text": "고레스 칙령과 1차 귀환"
+        },
+        {
+          "icon": "👥",
+          "title": "대표인물",
+          "text": "고레스 · 스룹바벨 · 예수아"
+        },
+        {
+          "icon": "📖",
+          "title": "관련성경",
+          "text": "에스라 1~3장, 대하 36장"
+        }
+      ],
+      "overviewFlow": [
+        {
+          "icon": "1",
+          "title": "귀환",
+          "text": "회복의 시작"
+        },
+        {
+          "icon": "2",
+          "title": "성전",
+          "text": "예배 회복"
+        },
+        {
+          "icon": "3",
+          "title": "보존",
+          "text": "민족 보존"
+        },
+        {
+          "icon": "4",
+          "title": "율법",
+          "text": "말씀 회복"
+        },
+        {
+          "icon": "5",
+          "title": "성벽",
+          "text": "공동체 완성"
+        }
+      ],
+      "timeline": [
+        {
+          "year": "BC 586",
+          "label": "예루살렘 멸망"
+        },
+        {
+          "year": "BC 538",
+          "label": "고레스 칙령",
+          "active": true
+        },
+        {
+          "year": "BC 536",
+          "label": "1차 귀환"
+        }
+      ],
+      "links": [
+        {
+          "label": "Matrix로 돌아가기",
+          "url": "../index.html"
+        },
+        {
+          "label": "성전 허브로 이동",
+          "hub": "temple"
+        }
+      ]
     },
     {
       "slug": "temple",
-      "title": "성전 허브"
+      "title": "성전 허브",
+      "year": "BC 536~516",
+      "short": "성전 기초 · 학개·스가랴 · 제2성전",
+      "prev": "return",
+      "next": "esther",
+      "prevLabel": "← 이전 허브: 귀환 허브",
+      "nextLabel": "다음 허브: 보존 허브 →",
+      "kicker": "허브 02 · 성전 허브",
+      "heroTitle": "성전 허브",
+      "heroText": "멈춰 있던 성전 재건이 하나님의 말씀으로 다시 시작되고, 제2성전 완공으로 예배 회복의 중심이 세워집니다.",
+      "tags": [
+        "성전 기초",
+        "공사 중단",
+        "학개",
+        "스가랴",
+        "제2성전"
+      ],
+      "mainFlowTitle": "성전 회복 흐름",
+      "mainFlow": [
+        {
+          "icon": "🧱",
+          "title": "성전 기초",
+          "text": "귀환 직후 예배 회복 시작"
+        },
+        {
+          "icon": "⛔",
+          "title": "공사 중단",
+          "text": "주변 민족의 방해와 낙심"
+        },
+        {
+          "icon": "📣",
+          "title": "선지자 권면",
+          "text": "학개와 스가랴의 말씀"
+        },
+        {
+          "icon": "🏛️",
+          "title": "제2성전 완공",
+          "text": "예배 중심의 재건"
+        }
+      ],
+      "map": "assets/maps/temple-hub-map.png",
+      "mapTitle": "성전 허브 지도",
+      "mapCaption": "예루살렘 성전 터를 중심으로, 성전 기초를 놓은 뒤 주변 민족의 방해로 공사가 중단되고, 학개와 스가랴의 말씀 선포를 통해 재건이 재개되어 제2성전이 완공되는 흐름을 시각화합니다.",
+      "keyItems": [
+        {
+          "icon": "📌",
+          "title": "대표사건",
+          "text": "제2성전 재건과 완공"
+        },
+        {
+          "icon": "👥",
+          "title": "대표인물",
+          "text": "스룹바벨 · 예수아 · 학개 · 스가랴 · 다리오"
+        },
+        {
+          "icon": "📖",
+          "title": "관련성경",
+          "text": "에스라 3~6장, 학개, 스가랴"
+        }
+      ],
+      "overviewFlow": [],
+      "timeline": [
+        {
+          "year": "BC 536",
+          "label": "성전 기초"
+        },
+        {
+          "year": "BC 520",
+          "label": "학개·스가랴",
+          "active": true
+        },
+        {
+          "year": "BC 516",
+          "label": "제2성전 완공"
+        }
+      ],
+      "links": [
+        {
+          "label": "귀환 허브로 이동",
+          "hub": "return"
+        },
+        {
+          "label": "보존 허브로 이동",
+          "hub": "esther"
+        }
+      ]
     },
     {
       "slug": "esther",
-      "title": "보존 허브"
+      "title": "보존 허브",
+      "year": "BC 478경",
+      "short": "에스더 · 모르드개 · 부림절",
+      "prev": "temple",
+      "next": "ezra",
+      "prevLabel": "← 이전 허브: 성전 허브",
+      "nextLabel": "다음 허브: 율법 허브 →",
+      "kicker": "허브 03 · 보존 허브",
+      "heroTitle": "보존 허브",
+      "heroText": "에스더 사건을 통해 흩어진 유대 민족이 하나님의 섭리 안에서 보존되는 흐름을 탐험합니다.",
+      "tags": [
+        "에스더",
+        "모르드개",
+        "하만",
+        "부림절"
+      ],
+      "mainFlowTitle": "보존 흐름",
+      "mainFlow": [
+        {
+          "icon": "👑",
+          "title": "에스더 왕후",
+          "text": "와스디 폐위 후 왕후 등극"
+        },
+        {
+          "icon": "⚔️",
+          "title": "하만의 음모",
+          "text": "유대인 말살 조서"
+        },
+        {
+          "icon": "🙏",
+          "title": "에스더의 결단",
+          "text": "죽으면 죽으리이다"
+        },
+        {
+          "icon": "🎉",
+          "title": "부림절 제정",
+          "text": "구원의 날을 기억"
+        }
+      ],
+      "map": "assets/maps/preservation-hub-map.png",
+      "mapTitle": "보존 허브 지도",
+      "mapCaption": "바사 제국 수도 수산궁을 중심으로 에스더 왕후 등극, 하만의 말살 계획, 에스더의 결단, 하만 처형, 유대 민족 구원과 부림절 제정까지의 흐름을 시각화합니다.",
+      "keyItems": [
+        {
+          "icon": "📌",
+          "title": "대표사건",
+          "text": "에스더와 유대 민족 보존"
+        },
+        {
+          "icon": "👥",
+          "title": "대표인물",
+          "text": "에스더 · 모르드개 · 하만 · 아하수에로"
+        },
+        {
+          "icon": "📖",
+          "title": "관련성경",
+          "text": "에스더 1~10장"
+        }
+      ],
+      "overviewFlow": [],
+      "timeline": [
+        {
+          "year": "BC 478경",
+          "label": "에스더 왕후",
+          "active": true
+        },
+        {
+          "year": "BC 473경",
+          "label": "유대인 구원"
+        }
+      ],
+      "links": [
+        {
+          "label": "성전 허브로 이동",
+          "hub": "temple"
+        },
+        {
+          "label": "율법 허브로 이동",
+          "hub": "ezra"
+        }
+      ]
     },
     {
       "slug": "ezra",
-      "title": "율법 허브"
+      "title": "율법 허브",
+      "year": "BC 458 이후",
+      "short": "에스라 · 율법 낭독 · 언약 갱신",
+      "prev": "esther",
+      "next": "nehemiah",
+      "prevLabel": "← 이전 허브: 보존 허브",
+      "nextLabel": "다음 허브: 성벽 허브 →",
+      "kicker": "허브 04 · 율법 허브",
+      "heroTitle": "율법 허브",
+      "heroText": "성전이 세워진 뒤, 에스라를 통해 포로귀환 공동체가 말씀 중심 공동체로 다시 세워지는 흐름을 탐험합니다.",
+      "tags": [
+        "에스라",
+        "율법 낭독",
+        "회개",
+        "언약 갱신"
+      ],
+      "mainFlowTitle": "율법 회복 흐름",
+      "mainFlow": [
+        {
+          "icon": "📜",
+          "title": "에스라 귀환",
+          "text": "율법 교사로 예루살렘 도착"
+        },
+        {
+          "icon": "🗣️",
+          "title": "율법 낭독",
+          "text": "말씀을 읽고 뜻을 해석"
+        },
+        {
+          "icon": "💧",
+          "title": "백성의 회개",
+          "text": "말씀 앞에서 돌이킴"
+        },
+        {
+          "icon": "🤝",
+          "title": "언약 갱신",
+          "text": "말씀 중심 공동체 회복"
+        }
+      ],
+      "map": "assets/maps/law-hub-map.png",
+      "mapTitle": "율법 허브 지도",
+      "mapCaption": "바사 제국에서 예루살렘으로 돌아온 에스라를 중심으로, 율법 낭독과 해석, 백성의 회개, 언약 갱신, 공동체 질서 회복이 단계적으로 보이도록 구성합니다.",
+      "keyItems": [
+        {
+          "icon": "📌",
+          "title": "대표사건",
+          "text": "에스라의 율법 회복과 신앙개혁"
+        },
+        {
+          "icon": "👥",
+          "title": "대표인물",
+          "text": "에스라 · 아닥사스다 · 귀환 공동체"
+        },
+        {
+          "icon": "📖",
+          "title": "관련성경",
+          "text": "에스라 7~10장, 느헤미야 8장"
+        }
+      ],
+      "overviewFlow": [],
+      "timeline": [
+        {
+          "year": "BC 458",
+          "label": "에스라 귀환",
+          "active": true
+        },
+        {
+          "year": "BC 445",
+          "label": "율법 낭독과 언약 갱신"
+        }
+      ],
+      "links": [
+        {
+          "label": "보존 허브로 이동",
+          "hub": "esther"
+        },
+        {
+          "label": "성벽 허브로 이동",
+          "hub": "nehemiah"
+        }
+      ]
     },
     {
       "slug": "nehemiah",
-      "title": "성벽 허브"
+      "title": "성벽 허브",
+      "year": "BC 445~430경",
+      "short": "느헤미야 · 성벽 재건 · 공동체 회복",
+      "prev": "ezra",
+      "next": null,
+      "prevLabel": "← 이전 허브: 율법 허브",
+      "nextLabel": "Matrix로 돌아가기",
+      "kicker": "허브 05 · 성벽 허브",
+      "heroTitle": "성벽 허브",
+      "heroText": "느헤미야의 성벽 재건을 통해 예루살렘 공동체의 외적 질서와 신앙 공동체성이 회복되는 흐름을 탐험합니다.",
+      "tags": [
+        "느헤미야",
+        "성벽 재건",
+        "52일 완공",
+        "공동체 정비"
+      ],
+      "mainFlowTitle": "성벽 회복 흐름",
+      "mainFlow": [
+        {
+          "icon": "🙏",
+          "title": "느헤미야의 기도",
+          "text": "성벽 붕괴 소식 앞에서 기도"
+        },
+        {
+          "icon": "📜",
+          "title": "왕의 허락",
+          "text": "아닥사스다의 허락으로 귀환"
+        },
+        {
+          "icon": "🌙",
+          "title": "성벽 조사",
+          "text": "밤에 무너진 성벽을 살핌"
+        },
+        {
+          "icon": "🧱",
+          "title": "52일 재건",
+          "text": "방해 속에서도 성벽 완공"
+        }
+      ],
+      "map": "assets/maps/wall-hub-map.png",
+      "mapTitle": "성벽 허브 지도",
+      "mapCaption": "수산궁에서 느헤미야가 예루살렘 성벽 붕괴 소식을 듣고 기도하는 장면에서 시작해, 왕의 허락, 예루살렘 귀환, 밤의 성벽 조사, 방해 속 재건, 52일 완공, 감사와 봉헌 예배, 공동체 질서 재정비까지의 흐름을 시각화합니다.",
+      "keyItems": [
+        {
+          "icon": "📌",
+          "title": "대표사건",
+          "text": "느헤미야의 성벽 재건과 공동체 정비"
+        },
+        {
+          "icon": "👥",
+          "title": "대표인물",
+          "text": "느헤미야 · 아닥사스다 · 산발랏 · 도비야"
+        },
+        {
+          "icon": "📖",
+          "title": "관련성경",
+          "text": "느헤미야 1~13장"
+        }
+      ],
+      "overviewFlow": [],
+      "timeline": [
+        {
+          "year": "BC 445",
+          "label": "느헤미야 귀환",
+          "active": true
+        },
+        {
+          "year": "52일",
+          "label": "성벽 완공"
+        },
+        {
+          "year": "BC 430경",
+          "label": "개혁 지속"
+        }
+      ],
+      "links": [
+        {
+          "label": "율법 허브로 이동",
+          "hub": "ezra"
+        },
+        {
+          "label": "Matrix로 돌아가기",
+          "url": "../index.html"
+        }
+      ]
     }
   ]
 }
