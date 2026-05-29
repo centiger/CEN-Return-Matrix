@@ -1,1 +1,61 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>포로귀환 5허브</title><style>body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f4fbf8;color:#10201d}.wrap{max-width:760px;margin:0 auto;padding:18px}.top{background:linear-gradient(135deg,#164f49,#236B63);color:#fff;border-radius:18px;padding:18px;margin-bottom:14px}.top h1{margin:0;font-size:24px}.top p{margin:8px 0 0;color:#d8fff8}.card{background:#fff;border:1px solid #a9d2ca;border-radius:18px;padding:16px;margin:12px 0;box-shadow:0 4px 14px rgba(20,80,70,.08)}.k{font-size:12px;font-weight:900;color:#236B63}.v{font-size:18px;font-weight:900;margin-top:4px}.body{font-size:14px;line-height:1.65}.back{display:block;text-align:center;background:#236B63;color:#fff;text-decoration:none;border-radius:12px;padding:12px;font-weight:900;margin-top:16px}</style></head><body><div class="wrap"><div class="top"><h1 id="t">포로귀환 5허브</h1><p id="s">회복의 시대</p></div><div class="card"><div class="k">핵심사건</div><div class="v" id="event"></div></div><div class="card"><div class="k">핵심주제</div><div class="v" id="theme"></div></div><div class="card"><div class="k">관련성경</div><div class="v" id="bible"></div></div><div class="card"><div class="k">핵심의미</div><div class="body" id="meaning"></div></div><a class="back" href="../index.html">← Matrix로 돌아가기</a></div><script>const data={"return": ["귀환의 허브", "고레스 칙령과 1차 귀환", "회복의 시작", "스 1장, 대하 36장", "하나님은 이방 왕 고레스를 사용해 언약 백성의 귀환을 여십니다."], "temple": ["성전의 허브", "성전 재건 완성", "예배 회복", "스 3~6장, 학개, 스가랴", "중단된 성전 재건이 선지자의 격려로 다시 시작되고 제2성전이 완공됩니다."], "esther": ["보존의 허브", "에스더와 민족 보존", "섭리와 보존", "에스더", "하나님의 이름이 직접 드러나지 않아도 역사의 배후에서 언약 백성을 보존하십니다."], "ezra": ["율법의 허브", "에스라의 율법 회복", "말씀 회복", "스 7~10장", "에스라는 율법 교사로서 말씀 중심의 신앙개혁을 이끕니다."], "nehemiah": ["성벽의 허브", "느헤미야의 성벽 재건", "공동체 회복", "느헤미야", "성벽 재건은 도시 방어만이 아니라 공동체 질서와 정체성 회복을 뜻합니다."]};const q=new URLSearchParams(location.search).get('hub')||'return';const h=data[q]||data.return;document.getElementById('t').textContent=h[0];document.getElementById('event').textContent=h[1];document.getElementById('theme').textContent=h[2];document.getElementById('bible').textContent=h[3];document.getElementById('meaning').textContent=h[4];</script></body></html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>포로귀환 5허브</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#236B63">
+<style>
+*{box-sizing:border-box}html,body{margin:0;padding:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f4fbf8;color:#10201d}body{min-height:100vh}.app{max-width:880px;margin:0 auto;padding:14px 12px 28px}.top{background:linear-gradient(135deg,#164f49,#236B63);color:#fff;border-radius:20px;padding:16px 16px 14px;box-shadow:0 8px 24px rgba(20,80,70,.18)}.topbar{display:flex;gap:8px;align-items:center;margin-bottom:12px}.backBtn,.pill{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.1);color:#fff;border-radius:999px;padding:8px 10px;font-size:12px;font-weight:900;text-decoration:none}.pill{margin-left:auto;color:#d8fff8}.kicker{font-size:12px;font-weight:900;color:#bff7ee;margin-bottom:6px}.top h1{margin:0;font-size:26px;line-height:1.12}.top p{margin:8px 0 0;color:#e6fff9;font-size:14px;line-height:1.5}.tabs{display:flex;gap:7px;overflow-x:auto;padding:12px 0 4px}.tab{flex:0 0 auto;border:1px solid #9fc7c0;background:#fff;color:#123a35;border-radius:999px;padding:8px 12px;font-size:12px;font-weight:900;text-decoration:none}.tab.active{background:#236B63;color:#fff;border-color:#236B63}.card{background:#fff;border:1px solid #a9d2ca;border-radius:18px;padding:15px;margin:12px 0;box-shadow:0 4px 14px rgba(20,80,70,.08)}.sectionTitle{font-size:15px;font-weight:900;color:#123a35;border-left:6px solid #236B63;padding-left:8px;margin:0 0 12px}.summaryGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.mini{border:1px solid #c7e2dc;background:#fbfffd;border-radius:14px;padding:11px}.mini b{display:block;font-size:12px;color:#236B63;margin-bottom:4px}.mini span{display:block;font-size:13px;font-weight:900;line-height:1.35;color:#152f2b}.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.node{min-height:86px;border:1px solid #b6d9d2;background:#fbfffd;border-radius:16px;padding:10px 8px;text-align:center;position:relative}.node:not(:last-child)::after{content:"→";position:absolute;right:-10px;top:34px;color:#236B63;font-weight:900}.ico{font-size:24px}.node b{display:block;font-size:12px;color:#123a35;margin-top:3px}.node small{display:block;font-size:10.5px;color:#49645f;margin-top:4px;line-height:1.35}.mapWrap{border:1px solid #c7e2dc;border-radius:18px;overflow:hidden;background:#e9f6f3}.mapWrap img{display:block;width:100%;height:auto;background:#e9f6f3}.caption{padding:10px 12px;font-size:12px;line-height:1.5;color:#385550;background:#fbfffd}.infoGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.info{border:1px solid #c7e2dc;background:#fbfffd;border-radius:14px;padding:11px}.info b{font-size:13px;color:#123a35}.info p{font-size:12px;line-height:1.45;margin:5px 0 0;color:#4d665f}.timeline{display:flex;gap:8px;overflow-x:auto;padding:2px 0}.t{flex:0 0 118px;border:1px solid #c7e2dc;background:#fbfffd;border-radius:14px;padding:10px;text-align:center}.t strong{display:block;color:#236B63;font-size:13px}.t span{display:block;margin-top:5px;font-size:11.5px;line-height:1.35;font-weight:800}.t.active{background:linear-gradient(135deg,#236B63,#164f49);color:#fff;border-color:#57BFB6}.t.active strong,.t.active span{color:#fff}.note{background:linear-gradient(135deg,#effffb,#dff5ef);border:1px solid #9fc7c0;border-radius:16px;padding:13px;font-size:13px;line-height:1.6;font-weight:700;color:#16332f}.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.action{display:block;text-align:center;text-decoration:none;border-radius:13px;padding:12px;font-size:13px;font-weight:900}.primary{background:#236B63;color:#fff}.secondary{background:#fff;border:1px solid #9fc7c0;color:#123a35}.placeholder{padding:24px 14px;text-align:center}.placeholder h2{margin:0 0 8px;font-size:22px;color:#123a35}.placeholder p{margin:0;color:#4d665f;line-height:1.55}.filePath{font-family:ui-monospace,Menlo,Consolas,monospace;background:#eef8f5;border:1px dashed #9fc7c0;border-radius:10px;padding:8px;margin-top:8px;font-size:12px;color:#123a35;overflow:auto}@media(max-width:560px){.summaryGrid,.infoGrid{grid-template-columns:1fr}.flow{grid-template-columns:repeat(2,minmax(0,1fr))}.node:nth-child(2)::after{display:none}.top h1{font-size:24px}}
+</style>
+</head>
+<body>
+<div class="app">
+  <section class="top">
+    <div class="topbar"><a class="backBtn" href="../index.html">← Matrix</a><span class="pill">포로귀환 시대 · 회복의 시작</span></div>
+    <div class="kicker" id="kicker">허브 01 · 귀환 허브</div>
+    <h1 id="title">귀환 허브</h1>
+    <p id="subtitle">고레스 칙령을 통해 포로귀환 시대가 열리고, 언약 백성의 회복이 시작됩니다.</p>
+  </section>
+
+  <nav class="tabs" id="tabs"></nav>
+  <main id="content"></main>
+</div>
+<script>
+const HUBS={
+  return:{
+    order:'허브 01 · 귀환 허브', title:'귀환 허브', label:'귀환', active:true,
+    subtitle:'고레스 칙령을 통해 포로귀환 시대가 열리고, 언약 백성의 회복이 시작됩니다.',
+    summary:[['대표사건','고레스 칙령과 1차 귀환'],['연대','BC 538~536'],['대표인물','고레스 · 스룹바벨 · 예수아'],['관련성경','에스라 1~3장, 대하 36장']],
+    flow:[['📜','고레스 칙령','귀환과 성전 재건 허락'],['🚶','1차 귀환','스룹바벨 인도'],['🏙️','예루살렘 도착','무너진 터전으로 돌아옴'],['🧱','성전 기초','예배 회복의 출발']],
+    map:'assets/maps/return-hub-map.png',
+    mapTitle:'귀환 허브 지도',
+    mapCaption:'바사 제국의 수산·바벨론 권역에서 예루살렘으로 이어지는 귀환의 길을 중심으로, 고레스 칙령 이후 스룹바벨과 예수아가 이끄는 1차 귀환 공동체가 무너진 성전 터로 돌아와 예배 회복의 첫걸음을 내딛는 흐름을 시각화합니다.',
+    info:[['회복의 주도권','귀환은 유다 백성의 힘이 아니라 하나님의 섭리와 약속 성취로 시작됩니다.'],['이방 왕 고레스','하나님은 바사 왕 고레스를 사용하여 포로귀환의 문을 여십니다.'],['스룹바벨 공동체','1차 귀환 공동체는 성전 재건과 예배 회복의 기초를 놓습니다.'],['CEN 연결','Check: 무슨 일이 일어났는가 · Explore: 왜 이방 왕을 사용하셨는가 · Note: 회복은 하나님의 약속에서 시작된다.']],
+    timeline:[['BC 586','예루살렘 멸망'],['BC 538','고레스 칙령',true],['BC 536','1차 귀환'],['BC 536경','성전 기초'],['BC 520','성전 재건 재개']],
+    note:'귀환 허브의 핵심은 “돌아왔다”가 아니라 “하나님이 회복을 시작하셨다”입니다. 포로귀환 시대 전체의 첫 문장입니다.'
+  },
+  temple:{order:'허브 02 · 성전 허브',title:'성전 허브',label:'성전',subtitle:'제2성전 재건을 중심으로 예배 회복을 탐험합니다.'},
+  esther:{order:'허브 03 · 보존 허브',title:'보존 허브',label:'보존',subtitle:'에스더 사건을 중심으로 민족 보존의 섭리를 탐험합니다.'},
+  ezra:{order:'허브 04 · 율법 허브',title:'율법 허브',label:'율법',subtitle:'에스라의 말씀 회복과 신앙개혁을 탐험합니다.'},
+  nehemiah:{order:'허브 05 · 성벽 허브',title:'성벽 허브',label:'성벽',subtitle:'느헤미야의 성벽 재건과 공동체 회복을 탐험합니다.'}
+};
+const params=new URLSearchParams(location.search);let slug=params.get('hub')||'return';if(!HUBS[slug])slug='return';
+function renderTabs(){document.getElementById('tabs').innerHTML=Object.entries(HUBS).map(([k,h])=>`<a class="tab ${k===slug?'active':''}" href="?hub=${k}">${h.label}</a>`).join('')}
+function renderHeader(h){document.getElementById('kicker').textContent=h.order;document.getElementById('title').textContent=h.title;document.getElementById('subtitle').textContent=h.subtitle}
+function renderReturn(h){return `
+<section class="card"><h2 class="sectionTitle">핵심 요약</h2><div class="summaryGrid">${h.summary.map(x=>`<div class="mini"><b>${x[0]}</b><span>${x[1]}</span></div>`).join('')}</div></section>
+<section class="card"><h2 class="sectionTitle">귀환 흐름</h2><div class="flow">${h.flow.map(x=>`<div class="node"><div class="ico">${x[0]}</div><b>${x[1]}</b><small>${x[2]}</small></div>`).join('')}</div></section>
+<section class="card"><h2 class="sectionTitle">${h.mapTitle}</h2><div class="mapWrap"><img src="${h.map}" alt="${h.mapTitle}"><div class="caption">${h.mapCaption}</div></div></section>
+<section class="card"><h2 class="sectionTitle">핵심 의미</h2><div class="infoGrid">${h.info.map(x=>`<div class="info"><b>${x[0]}</b><p>${x[1]}</p></div>`).join('')}</div></section>
+<section class="card"><h2 class="sectionTitle">연대 흐름</h2><div class="timeline">${h.timeline.map(x=>`<div class="t ${x[2]?'active':''}"><strong>${x[0]}</strong><span>${x[1]}</span></div>`).join('')}</div></section>
+<div class="note">${h.note}</div>
+<div class="actions"><a class="action secondary" href="../index.html">← Matrix로 돌아가기</a><a class="action primary" href="?hub=temple">다음 허브: 성전 →</a></div>`}
+function renderPlaceholder(h){return `<section class="card placeholder"><h2>${h.title}</h2><p>${h.subtitle}</p><p style="margin-top:10px;font-weight:900;color:#236B63">아직 상세 허브 제작 전입니다.</p></section><div class="actions"><a class="action secondary" href="../index.html">← Matrix로 돌아가기</a><a class="action primary" href="?hub=return">귀환 허브 보기</a></div>`}
+function render(){const h=HUBS[slug];renderTabs();renderHeader(h);document.getElementById('content').innerHTML=slug==='return'?renderReturn(h):renderPlaceholder(h)}
+render();
+if('serviceWorker'in navigator){navigator.serviceWorker.register('./sw.js').catch(()=>{})}
+</script>
+</body>
+</html>

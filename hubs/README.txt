@@ -1,10 +1,6 @@
-CEN 분열왕국 5허브 엔진
+포로귀환 Matrix 통합 허브 구조
 
-실행: index.html?hub=carmel / north-israel-fall / hezekiah-assyria / josiah-reform / jerusalem-fall
-지도: assets/maps/
-데이터: data/hubs.json
-
-지도 파일 규칙:
-- 지도는 PNG 사용 권장
-- 경로 예: assets/maps/north-israel-map.png
-- data/hubs.json의 map 값과 실제 파일명이 정확히 같아야 함
+- 허브는 별도 레포지토리가 아니라 포로귀환 Matrix PWA 내부의 hubs/에 통합합니다.
+- 귀환 허브 지도 파일 경로: hubs/assets/maps/return-hub-map.png
+- 나중에 새 허브 지도를 만들면 같은 파일명(return-hub-map.png)으로 교체하면 됩니다.
+- 허브 화면에는 교체 안내문을 노출하지 않고, 지도 설명문만 표시합니다.
