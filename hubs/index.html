@@ -79,7 +79,7 @@ const HUBS={
   nehemiah:{
     order:'허브 05 · 성벽 허브',title:'성벽 허브',label:'성벽',
     subtitle:'느헤미야의 성벽 재건을 통해 예루살렘 공동체의 외적 질서와 신앙 공동체성이 회복되는 흐름을 탐험합니다.',
-    short:'느헤미야 · 성벽 재건 · 공동체 회복', prev:'ezra',
+    short:'느헤미야 · 성벽 재건 · 공동체 회복', prev:'ezra', nextUrl:'https://centiger.github.io/CEN-Matrix-Jesus/', nextLabel:'✝️ 예수시대 Matrix로 이동 →',
     summary:[['대표사건','느헤미야의 성벽 재건과 공동체 정비'],['연대','BC 445~430경'],['대표인물','느헤미야 · 아닥사스다 · 산발랏 · 도비야'],['관련성경','느헤미야 1~13장']],
     flow:[['🙏','느헤미야의 기도','성벽 붕괴 소식을 듣고 금식하며 기도'],['📜','왕의 허락','아닥사스다의 허락으로 예루살렘 귀환'],['🌙','성벽 조사','밤에 무너진 성벽을 살핌'],['🧱','52일 재건','방해 속에서도 성벽 완공']],
     map:'assets/maps/wall-hub-map.png',
@@ -103,8 +103,9 @@ function renderHub(h){return `<section class="card"><h2 class="sectionTitle">핵
 <section class="card"><h2 class="sectionTitle">핵심 의미</h2><div class="infoGrid">${h.info.map(x=>`<div class="info"><b>${x[0]}</b><p>${x[1]}</p></div>`).join('')}</div></section>
 <section class="card"><h2 class="sectionTitle">연대 흐름</h2><div class="timeline">${h.timeline.map(x=>`<div class="t ${x[2]?'active':''}"><strong>${x[0]}</strong><span>${x[1]}</span></div>`).join('')}</div></section>
 <div class="note">${h.note}</div>
-<div class="actions">${h.prev?`<a class="action secondary" href="?hub=${h.prev}">${prevLabel(h)}</a>`:`<a class="action secondary" href="../index.html">← Matrix로 돌아가기</a>`}${h.next?`<a class="action primary" href="?hub=${h.next}">${nextLabel(h)}</a>`:`<a class="action primary" href="../index.html">Matrix로 돌아가기</a>`}</div>`}
-function renderPlaceholder(h){return `<section class="card placeholder"><h2>${h.title}</h2><p>${h.subtitle}</p><p style="margin-top:10px;font-weight:900;color:#236B63">아직 상세 허브 제작 전입니다.</p></section><div class="actions">${h.prev?`<a class="action secondary" href="?hub=${h.prev}">${prevLabel(h)}</a>`:`<a class="action secondary" href="../index.html">← Matrix로 돌아가기</a>`}${h.next?`<a class="action primary" href="?hub=${h.next}">${nextLabel(h)}</a>`:`<a class="action primary" href="../index.html">Matrix로 돌아가기</a>`}</div>`}
+${h.nextUrl?`<section class="card"><h2 class="sectionTitle">다음 시대 연결</h2><a class="action primary" style="display:block" href="${h.nextUrl}">${h.nextLabel||'다음 Matrix로 이동 →'}</a></section>`:''}
+<div class="actions">${h.prev?`<a class="action secondary" href="?hub=${h.prev}">${prevLabel(h)}</a>`:`<a class="action secondary" href="../index.html">← Matrix로 돌아가기</a>`}${h.next?`<a class="action primary" href="?hub=${h.next}">${nextLabel(h)}</a>`:(h.nextUrl?`<a class="action primary" href="${h.nextUrl}">${h.nextLabel||'다음 Matrix로 이동 →'}</a>`:`<a class="action primary" href="../index.html">Matrix로 돌아가기</a>`)}</div>`}
+function renderPlaceholder(h){return `<section class="card placeholder"><h2>${h.title}</h2><p>${h.subtitle}</p><p style="margin-top:10px;font-weight:900;color:#236B63">아직 상세 허브 제작 전입니다.</p></section><div class="actions">${h.prev?`<a class="action secondary" href="?hub=${h.prev}">${prevLabel(h)}</a>`:`<a class="action secondary" href="../index.html">← Matrix로 돌아가기</a>`}${h.next?`<a class="action primary" href="?hub=${h.next}">${nextLabel(h)}</a>`:(h.nextUrl?`<a class="action primary" href="${h.nextUrl}">${h.nextLabel||'다음 Matrix로 이동 →'}</a>`:`<a class="action primary" href="../index.html">Matrix로 돌아가기</a>`)}</div>`}
 function renderHubList(){document.getElementById('hubList').innerHTML=Object.entries(HUBS).map(([k,h])=>`<a class="hubItem ${k===slug?'active':''}" href="?hub=${k}"><b>${h.order.replace(' · ',' ')}</b><span>${h.short} · ${h.subtitle}</span></a>`).join('')}
 function render(){const h=HUBS[slug];renderTabs();renderHeader(h);renderHubList();document.getElementById('content').innerHTML=h.summary?renderHub(h):renderPlaceholder(h)}
 document.getElementById('hubListBtn').onclick=()=>document.getElementById('drawer').classList.add('show');document.getElementById('drawerClose').onclick=()=>document.getElementById('drawer').classList.remove('show');document.getElementById('drawer').onclick=e=>{if(e.target.id==='drawer')document.getElementById('drawer').classList.remove('show')};
