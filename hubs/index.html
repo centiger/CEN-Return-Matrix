@@ -7,175 +7,77 @@
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#236B63">
 <style>
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f4fbf8;color:#10201d}
-body{min-height:100vh}
-.app{max-width:880px;margin:0 auto;padding:14px 12px 28px}
-.top{background:linear-gradient(135deg,#164f49,#236B63);color:#fff;border-radius:20px;padding:16px 16px 14px;box-shadow:0 8px 24px rgba(20,80,70,.18)}
-.topbar{display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap}
-.backBtn,.pill,.hubListBtn{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.1);color:#fff;border-radius:999px;padding:8px 10px;font-size:12px;font-weight:900;text-decoration:none}
-.hubListBtn{cursor:pointer}
-.pill{margin-left:auto;color:#d8fff8}
-.kicker{font-size:12px;font-weight:900;color:#bff7ee;margin-bottom:6px}
-.top h1{margin:0;font-size:26px;line-height:1.12}
-.top p{margin:8px 0 0;color:#e6fff9;font-size:14px;line-height:1.5}
-.tabs{display:flex;gap:7px;overflow-x:auto;padding:12px 0 4px}
-.tab{flex:0 0 auto;border:1px solid #9fc7c0;background:#fff;color:#123a35;border-radius:999px;padding:8px 12px;font-size:12px;font-weight:900;text-decoration:none}
-.tab.active{background:#236B63;color:#fff;border-color:#236B63}
-.card{background:#fff;border:1px solid #a9d2ca;border-radius:18px;padding:15px;margin:12px 0;box-shadow:0 4px 14px rgba(20,80,70,.08)}
-.sectionTitle{font-size:15px;font-weight:900;color:#123a35;border-left:6px solid #236B63;padding-left:8px;margin:0 0 12px}
-.summaryGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
-.mini{border:1px solid #c7e2dc;background:#fbfffd;border-radius:14px;padding:11px}
-.mini b{display:block;font-size:12px;color:#236B63;margin-bottom:4px}
-.mini span{display:block;font-size:13px;font-weight:900;line-height:1.35;color:#152f2b}
-.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
-.node{min-height:86px;border:1px solid #b6d9d2;background:#fbfffd;border-radius:16px;padding:10px 8px;text-align:center;position:relative}
-.node:not(:last-child)::after{content:"→";position:absolute;right:-10px;top:34px;color:#236B63;font-weight:900}
-.ico{font-size:24px}
-.node b{display:block;font-size:12px;color:#123a35;margin-top:3px}
-.node small{display:block;font-size:10.5px;color:#49645f;margin-top:4px;line-height:1.35}
-.mapWrap{border:1px solid #c7e2dc;border-radius:18px;overflow:hidden;background:#e9f6f3}
-.mapWrap img{display:block;width:100%;height:auto;background:#e9f6f3}
-.caption{padding:10px 12px;font-size:12px;line-height:1.5;color:#385550;background:#fbfffd}
-.infoGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
-.info{border:1px solid #c7e2dc;background:#fbfffd;border-radius:14px;padding:11px}
-.info b{font-size:13px;color:#123a35}
-.info p{font-size:12px;line-height:1.45;margin:5px 0 0;color:#4d665f}
-.timeline{display:flex;gap:8px;overflow-x:auto;padding:2px 0}
-.t{flex:0 0 118px;border:1px solid #c7e2dc;background:#fbfffd;border-radius:14px;padding:10px;text-align:center}
-.t strong{display:block;color:#236B63;font-size:13px}
-.t span{display:block;margin-top:5px;font-size:11.5px;line-height:1.35;font-weight:800}
-.t.active{background:linear-gradient(135deg,#236B63,#164f49);color:#fff;border-color:#57BFB6}
-.t.active strong,.t.active span{color:#fff}
-.note{background:linear-gradient(135deg,#effffb,#dff5ef);border:1px solid #9fc7c0;border-radius:16px;padding:13px;font-size:13px;line-height:1.6;font-weight:700;color:#16332f}
-.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
-.action{display:block;text-align:center;text-decoration:none;border-radius:13px;padding:12px;font-size:13px;font-weight:900;border:0;cursor:pointer}
-.primary{background:#236B63;color:#fff}.secondary{background:#fff;border:1px solid #9fc7c0;color:#123a35}
-.placeholder{padding:24px 14px;text-align:center}.placeholder h2{margin:0 0 8px;font-size:22px;color:#123a35}.placeholder p{margin:0;color:#4d665f;line-height:1.55}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.42);display:none;align-items:flex-end;justify-content:center;z-index:1000;padding:12px}
-.modal.show{display:flex}
-.sheet{width:min(520px,100%);background:#fff;border-radius:22px 22px 18px 18px;border:1px solid #9fc7c0;box-shadow:0 16px 40px rgba(0,0,0,.25);padding:15px}
-.sheetTop{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
-.sheetTop b{font-size:17px;color:#123a35}.close{border:0;background:#e9f6f3;color:#123a35;border-radius:999px;width:34px;height:34px;font-size:20px;font-weight:900}
-.hubGrid{display:grid;gap:8px}
-.hubItem{display:flex;align-items:center;justify-content:space-between;gap:10px;text-decoration:none;border:1px solid #c7e2dc;background:#fbfffd;border-radius:15px;padding:12px;color:#123a35}
-.hubItem strong{font-size:14px}.hubItem span{font-size:11px;color:#49645f;font-weight:800;text-align:right}
-@media(max-width:560px){.summaryGrid,.infoGrid{grid-template-columns:1fr}.flow{grid-template-columns:repeat(2,minmax(0,1fr))}.node:nth-child(2)::after{display:none}.top h1{font-size:24px}.actions{grid-template-columns:1fr}.pill{margin-left:0}}
+*{box-sizing:border-box}html,body{margin:0;padding:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f4fbf8;color:#10201d}body{min-height:100vh}.app{max-width:880px;margin:0 auto;padding:14px 12px 28px}.top{background:linear-gradient(135deg,#164f49,#236B63);color:#fff;border-radius:20px;padding:16px 16px 14px;box-shadow:0 8px 24px rgba(20,80,70,.18)}.topbar{display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap}.backBtn,.pill,.listBtn{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.1);color:#fff;border-radius:999px;padding:8px 10px;font-size:12px;font-weight:900;text-decoration:none}.listBtn{cursor:pointer}.pill{margin-left:auto;color:#d8fff8}.kicker{font-size:12px;font-weight:900;color:#bff7ee;margin-bottom:6px}.top h1{margin:0;font-size:26px;line-height:1.12}.top p{margin:8px 0 0;color:#e6fff9;font-size:14px;line-height:1.5}.tabs{display:flex;gap:7px;overflow-x:auto;padding:12px 0 4px}.tab{flex:0 0 auto;border:1px solid #9fc7c0;background:#fff;color:#123a35;border-radius:999px;padding:8px 12px;font-size:12px;font-weight:900;text-decoration:none}.tab.active{background:#236B63;color:#fff;border-color:#236B63}.card{background:#fff;border:1px solid #a9d2ca;border-radius:18px;padding:15px;margin:12px 0;box-shadow:0 4px 14px rgba(20,80,70,.08)}.sectionTitle{font-size:15px;font-weight:900;color:#123a35;border-left:6px solid #236B63;padding-left:8px;margin:0 0 12px}.summaryGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.mini{border:1px solid #c7e2dc;background:#fbfffd;border-radius:14px;padding:11px}.mini b{display:block;font-size:12px;color:#236B63;margin-bottom:4px}.mini span{display:block;font-size:13px;font-weight:900;line-height:1.35;color:#152f2b}.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.node{min-height:86px;border:1px solid #b6d9d2;background:#fbfffd;border-radius:16px;padding:10px 8px;text-align:center;position:relative}.node:not(:last-child)::after{content:"→";position:absolute;right:-10px;top:34px;color:#236B63;font-weight:900}.ico{font-size:24px}.node b{display:block;font-size:12px;color:#123a35;margin-top:3px}.node small{display:block;font-size:10.5px;color:#49645f;margin-top:4px;line-height:1.35}.mapWrap{border:1px solid #c7e2dc;border-radius:18px;overflow:hidden;background:#e9f6f3}.mapWrap img{display:block;width:100%;height:auto;background:#e9f6f3}.caption{padding:10px 12px;font-size:12px;line-height:1.5;color:#385550;background:#fbfffd}.infoGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.info{border:1px solid #c7e2dc;background:#fbfffd;border-radius:14px;padding:11px}.info b{font-size:13px;color:#123a35}.info p{font-size:12px;line-height:1.45;margin:5px 0 0;color:#4d665f}.timeline{display:flex;gap:8px;overflow-x:auto;padding:2px 0}.t{flex:0 0 118px;border:1px solid #c7e2dc;background:#fbfffd;border-radius:14px;padding:10px;text-align:center}.t strong{display:block;color:#236B63;font-size:13px}.t span{display:block;margin-top:5px;font-size:11.5px;line-height:1.35;font-weight:800}.t.active{background:linear-gradient(135deg,#236B63,#164f49);color:#fff;border-color:#57BFB6}.t.active strong,.t.active span{color:#fff}.note{background:linear-gradient(135deg,#effffb,#dff5ef);border:1px solid #9fc7c0;border-radius:16px;padding:13px;font-size:13px;line-height:1.6;font-weight:700;color:#16332f}.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.action{display:block;text-align:center;text-decoration:none;border-radius:13px;padding:12px;font-size:13px;font-weight:900}.primary{background:#236B63;color:#fff}.secondary{background:#fff;border:1px solid #9fc7c0;color:#123a35}.placeholder{padding:24px 14px;text-align:center}.placeholder h2{margin:0 0 8px;font-size:22px;color:#123a35}.placeholder p{margin:0;color:#4d665f;line-height:1.55}.drawer{position:fixed;inset:0;background:rgba(0,0,0,.42);display:none;align-items:center;justify-content:center;z-index:1000;padding:18px}.drawer.show{display:flex}.drawerCard{width:min(430px,100%);background:#fbfffd;border:1px solid #9fc7c0;border-radius:18px;padding:15px;box-shadow:0 10px 30px rgba(0,0,0,.24)}.drawerHead{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}.drawerHead b{font-size:18px;color:#123a35}.drawerClose{border:0;background:#236B63;color:white;border-radius:10px;padding:8px 10px;font-weight:900}.hubList{display:grid;gap:8px}.hubItem{display:block;text-decoration:none;border:1px solid #c7e2dc;background:#fff;border-radius:14px;padding:12px;color:#123a35}.hubItem b{display:block;font-size:14px}.hubItem span{display:block;margin-top:4px;font-size:12px;color:#536e68;line-height:1.35}.hubItem.active{background:linear-gradient(135deg,#236B63,#164f49);color:#fff;border-color:#57BFB6}.hubItem.active span{color:#e6fff9}@media(max-width:560px){.summaryGrid,.infoGrid{grid-template-columns:1fr}.flow{grid-template-columns:repeat(2,minmax(0,1fr))}.node:nth-child(2)::after{display:none}.top h1{font-size:24px}.pill{margin-left:0}.actions{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="app">
   <section class="top">
-    <div class="topbar">
-      <a class="backBtn" href="../index.html">← Matrix</a>
-      <button class="hubListBtn" id="openHubList" type="button">허브 목록</button>
-      <span class="pill">포로귀환 시대 · 회복의 흐름</span>
-    </div>
-    <div class="kicker" id="kicker"></div>
-    <h1 id="title"></h1>
-    <p id="subtitle"></p>
+    <div class="topbar"><a class="backBtn" href="../index.html">← Matrix</a><button class="listBtn" id="hubListBtn" type="button">허브 목록</button><span class="pill">포로귀환 시대 · 회복의 과정</span></div>
+    <div class="kicker" id="kicker">허브 01 · 귀환 허브</div>
+    <h1 id="title">귀환 허브</h1>
+    <p id="subtitle">고레스 칙령을 통해 포로귀환 시대가 열리고, 언약 백성의 회복이 시작됩니다.</p>
   </section>
   <nav class="tabs" id="tabs"></nav>
   <main id="content"></main>
 </div>
-
-<div class="modal" id="hubModal" aria-hidden="true">
-  <div class="sheet" role="dialog" aria-modal="true" aria-label="포로귀환 허브 목록">
-    <div class="sheetTop"><b>포로귀환 허브 목록</b><button class="close" id="closeHubList" type="button">×</button></div>
-    <div class="hubGrid" id="hubGrid"></div>
-  </div>
-</div>
-
+<div class="drawer" id="drawer"><div class="drawerCard"><div class="drawerHead"><b>포로귀환 허브 목록</b><button class="drawerClose" id="drawerClose">닫기</button></div><div class="hubList" id="hubList"></div></div></div>
 <script>
 const HUBS={
   return:{
-    order:'허브 01 · 귀환 허브', title:'귀환 허브', label:'귀환',
+    order:'허브 01 · 귀환 허브', title:'귀환 허브', label:'귀환', short:'회복의 시작',
     subtitle:'고레스 칙령을 통해 포로귀환 시대가 열리고, 언약 백성의 회복이 시작됩니다.',
-    short:'고레스 칙령 · 1차 귀환', next:'temple',
     summary:[['대표사건','고레스 칙령과 1차 귀환'],['연대','BC 538~536'],['대표인물','고레스 · 스룹바벨 · 예수아'],['관련성경','에스라 1~3장, 대하 36장']],
     flow:[['📜','고레스 칙령','귀환과 성전 재건 허락'],['🚶','1차 귀환','스룹바벨 인도'],['🏙️','예루살렘 도착','무너진 터전으로 돌아옴'],['🧱','성전 기초','예배 회복의 출발']],
-    map:'assets/maps/return-hub-map.png',
-    mapTitle:'귀환 허브 지도',
+    map:'assets/maps/return-hub-map.png', mapTitle:'귀환 허브 지도',
     mapCaption:'바사 제국의 수산·바벨론 권역에서 예루살렘으로 이어지는 귀환의 길을 중심으로, 고레스 칙령 이후 스룹바벨과 예수아가 이끄는 1차 귀환 공동체가 무너진 성전 터로 돌아와 예배 회복의 첫걸음을 내딛는 흐름을 시각화합니다.',
     info:[['회복의 주도권','귀환은 유다 백성의 힘이 아니라 하나님의 섭리와 약속 성취로 시작됩니다.'],['이방 왕 고레스','하나님은 바사 왕 고레스를 사용하여 포로귀환의 문을 여십니다.'],['스룹바벨 공동체','1차 귀환 공동체는 성전 재건과 예배 회복의 기초를 놓습니다.'],['CEN 연결','Check: 무슨 일이 일어났는가 · Explore: 왜 이방 왕을 사용하셨는가 · Note: 회복은 하나님의 약속에서 시작된다.']],
     timeline:[['BC 586','예루살렘 멸망'],['BC 538','고레스 칙령',true],['BC 536','1차 귀환'],['BC 536경','성전 기초'],['BC 520','성전 재건 재개']],
-    note:'귀환 허브의 핵심은 “돌아왔다”가 아니라 “하나님이 회복을 시작하셨다”입니다. 포로귀환 시대 전체의 첫 문장입니다.'
+    note:'귀환 허브의 핵심은 “돌아왔다”가 아니라 “하나님이 회복을 시작하셨다”입니다. 포로귀환 시대 전체의 첫 문장입니다.',
+    prev:'',next:'temple',prevLabel:'',nextLabel:'다음 허브: 성전 →'
   },
   temple:{
-    order:'허브 02 · 성전 허브',title:'성전 허브',label:'성전',
-    subtitle:'멈춰 있던 성전 재건이 하나님의 말씀으로 다시 시작되고, 제2성전 완공으로 예배 회복의 중심이 세워집니다.',
-    short:'성전 기초 · 학개·스가랴 · 제2성전', prev:'return', next:'esther',
+    order:'허브 02 · 성전 허브',title:'성전 허브',label:'성전',short:'예배 회복',
+    subtitle:'제2성전 재건을 중심으로 멈춘 예배가 하나님의 말씀으로 다시 세워지는 흐름을 탐험합니다.',
     summary:[['대표사건','제2성전 재건과 완공'],['연대','BC 536~516'],['대표인물','스룹바벨 · 예수아 · 학개 · 스가랴 · 다리오'],['관련성경','에스라 3~6장, 학개, 스가랴']],
-    flow:[['🧱','성전 기초','귀환 직후 예배 회복 시작'],['⛔','공사 중단','주변 민족의 방해와 낙심'],['📣','선지자 권면','학개와 스가랴의 말씀'],['🏛️','제2성전 완공','예배 중심의 재건']],
-    map:'assets/maps/temple-hub-map.png',
-    mapTitle:'성전 허브 지도',
+    flow:[['🧱','성전 기초','귀환 공동체가 성전 터에 기초를 놓음'],['⚠️','공사 중단','주변 민족의 방해와 낙심으로 재건 중단'],['📣','학개·스가랴','말씀 선포로 백성을 다시 일으킴'],['🏛️','제2성전 완공','다리오 왕 시대에 성전 완공']],
+    map:'assets/maps/temple-hub-map.png', mapTitle:'성전 허브 지도',
     mapCaption:'예루살렘 성전 터를 중심으로, 귀환 공동체가 성전 기초를 놓은 뒤 주변 민족의 방해로 공사가 중단되고, 학개와 스가랴의 말씀 선포를 통해 재건이 재개되어 다리오 왕 시대에 제2성전이 완공되는 흐름을 시각화합니다.',
-    info:[['멈춘 회복','귀환했지만 성전 재건은 방해와 낙심 속에 오래 멈췄습니다.'],['말씀의 재점화','학개와 스가랴는 백성의 우선순위를 다시 예배와 성전으로 돌립니다.'],['제2성전 완공','성전 완공은 건물 완성이 아니라 예배 중심 회복의 표시입니다.'],['CEN 연결','Check: 왜 공사가 멈췄는가 · Explore: 말씀은 어떻게 공동체를 다시 일으키는가 · Note: 회복은 예배의 중심을 세우는 일이다.']],
-    timeline:[['BC 536','성전 기초'],['BC 536~520','공사 중단'],['BC 520','학개·스가랴',true],['BC 520~516','재건 재개'],['BC 516','제2성전 완공']],
-    note:'성전 허브의 핵심은 “돌아온 백성이 다시 하나님을 예배하는 중심을 세웠다”는 점입니다. 회복은 장소 복귀로 끝나지 않고 예배 회복으로 깊어집니다.'
+    info:[['멈춘 회복','귀환은 시작이었지만 예배 회복은 방해와 낙심 속에서 멈추었습니다.'],['선지자의 역할','학개와 스가랴는 백성의 시선을 현실의 두려움에서 하나님의 약속으로 돌립니다.'],['다리오의 조서','바사 왕 다리오 시대에 성전 재건의 합법성이 확인되고 공사가 재개됩니다.'],['CEN 연결','Check: 왜 공사가 멈췄는가 · Explore: 말씀은 어떻게 공동체를 다시 움직였는가 · Note: 예배 회복은 말씀 순종에서 다시 시작된다.']],
+    timeline:[['BC 536','성전 기초'],['BC 536~520','공사 중단'],['BC 520','학개·스가랴',true],['BC 520','재건 재개'],['BC 516','제2성전 완공']],
+    note:'성전 허브의 핵심은 “건물 재건”이 아니라 “예배 회복”입니다. 무너진 성전은 낙심으로 멈췄지만, 하나님의 말씀으로 다시 세워졌습니다.',
+    prev:'return',next:'esther',prevLabel:'← 이전 허브: 귀환',nextLabel:'다음 허브: 보존 →'
   },
-  esther:{order:'허브 03 · 보존 허브',title:'보존 허브',label:'보존',subtitle:'에스더 사건을 중심으로 민족 보존의 섭리를 탐험합니다.',short:'에스더 · 모르드개 · 부림절'},
-  ezra:{order:'허브 04 · 율법 허브',title:'율법 허브',label:'율법',subtitle:'에스라의 말씀 회복과 신앙개혁을 탐험합니다.',short:'에스라 · 율법 낭독 · 언약 갱신'},
-  nehemiah:{order:'허브 05 · 성벽 허브',title:'성벽 허브',label:'성벽',subtitle:'느헤미야의 성벽 재건과 공동체 회복을 탐험합니다.',short:'느헤미야 · 성벽 재건 · 공동체 회복'}
+  esther:{
+    order:'허브 03 · 보존 허브',title:'보존 허브',label:'보존',short:'민족 보존',
+    subtitle:'에스더 사건을 중심으로 보이지 않는 하나님의 섭리가 언약 백성을 보존하는 흐름을 탐험합니다.',
+    summary:[['대표사건','에스더와 유대 민족 보존'],['연대','BC 478경'],['대표인물','에스더 · 모르드개 · 하만 · 아하수에로'],['관련성경','에스더 1~10장']],
+    flow:[['👑','에스더 왕후 등극','와스디 폐위 후 에스더가 왕후가 됨'],['📜','하만의 조서','유대인 말살 계획이 제국 전역에 선포됨'],['🙏','에스더의 결단','금식 후 죽음을 각오하고 왕 앞에 나아감'],['🎉','부림절 제정','유대 민족이 구원받고 기념 절기가 세워짐']],
+    map:'assets/maps/preservation-hub-map.png', mapTitle:'보존 허브 지도',
+    mapCaption:'바사 제국 수도 수산궁을 중심으로, 왕후 와스디 폐위 이후 에스더가 왕후가 되고 하만이 유대인 말살 계획을 세운다. 모르드개의 요청을 받은 에스더가 죽음을 각오하고 왕 앞에 나아가며, 결국 하만이 처형되고 유대 민족이 구원을 받는 과정과 부림절 제정까지의 흐름이 한눈에 보이도록 구성합니다. 수산궁, 왕의 뜰, 에스더의 금식, 하만의 장대, 부림절 축제를 주요 시각 요소로 표현합니다.',
+    info:[['보이지 않는 섭리','에스더서에는 하나님의 이름이 직접 드러나지 않지만, 사건의 흐름 전체가 하나님의 보존 섭리를 보여줍니다.'],['위기의 공동체','성전 재건이 이루어지는 시대에도 흩어진 유대인들은 제국 안에서 생존 위기를 겪었습니다.'],['에스더의 결단','에스더는 왕후의 자리를 자기 보존이 아니라 민족 보존을 위한 자리로 사용합니다.'],['CEN 연결','Check: 어떤 위기가 닥쳤는가 · Explore: 하나님은 어떻게 보존하시는가 · Note: 보이지 않아도 하나님은 일하고 계신다.']],
+    timeline:[['BC 486','아하수에로 즉위'],['BC 478경','에스더 왕후',true],['BC 474경','하만의 조서'],['BC 473경','유대인 구원'],['이후','부림절 기념']],
+    note:'보존 허브의 핵심은 “하나님이 보이지 않는다”가 아니라 “보이지 않아도 하나님이 지키신다”입니다. 포로귀환 시대의 회복은 예루살렘뿐 아니라 흩어진 백성의 생존까지 포함합니다.',
+    prev:'temple',next:'ezra',prevLabel:'← 이전 허브: 성전',nextLabel:'다음 허브: 율법 →'
+  },
+  ezra:{order:'허브 04 · 율법 허브',title:'율법 허브',label:'율법',short:'말씀 회복',subtitle:'에스라의 말씀 회복과 신앙개혁을 탐험합니다.',prev:'esther',next:'nehemiah',prevLabel:'← 이전 허브: 보존',nextLabel:'다음 허브: 성벽 →'},
+  nehemiah:{order:'허브 05 · 성벽 허브',title:'성벽 허브',label:'성벽',short:'공동체 회복',subtitle:'느헤미야의 성벽 재건과 공동체 회복을 탐험합니다.',prev:'ezra',next:'',prevLabel:'← 이전 허브: 율법',nextLabel:''}
 };
-const params=new URLSearchParams(location.search);
-let slug=params.get('hub')||'return';
-if(!HUBS[slug]) slug='return';
-
-function goHub(nextSlug){
-  if(!HUBS[nextSlug]) return;
-  slug=nextSlug;
-  history.pushState(null,'',`?hub=${slug}`);
-  render();
-  closeHubList();
-  window.scrollTo(0,0);
-}
-function renderTabs(){
-  document.getElementById('tabs').innerHTML=Object.entries(HUBS).map(([k,h])=>`<a class="tab ${k===slug?'active':''}" href="?hub=${k}" data-hub="${k}">${h.label}</a>`).join('');
-}
-function renderHeader(h){
-  document.getElementById('kicker').textContent=h.order;
-  document.getElementById('title').textContent=h.title;
-  document.getElementById('subtitle').textContent=h.subtitle;
-}
-function renderFullHub(h){
-return `
-<section class="card"><h2 class="sectionTitle">핵심 요약</h2><div class="summaryGrid">${h.summary.map(x=>`<div class="mini"><b>${x[0]}</b><span>${x[1]}</span></div>`).join('')}</div></section>
-<section class="card"><h2 class="sectionTitle">핵심 흐름</h2><div class="flow">${h.flow.map(x=>`<div class="node"><div class="ico">${x[0]}</div><b>${x[1]}</b><small>${x[2]}</small></div>`).join('')}</div></section>
+const params=new URLSearchParams(location.search);let slug=params.get('hub')||'return';if(!HUBS[slug])slug='return';
+function esc(s){return String(s??'')}
+function renderTabs(){document.getElementById('tabs').innerHTML=Object.entries(HUBS).map(([k,h])=>`<a class="tab ${k===slug?'active':''}" href="?hub=${k}">${h.label}</a>`).join('')}
+function renderHeader(h){document.getElementById('kicker').textContent=h.order;document.getElementById('title').textContent=h.title;document.getElementById('subtitle').textContent=h.subtitle}
+function renderHub(h){return `<section class="card"><h2 class="sectionTitle">핵심 요약</h2><div class="summaryGrid">${h.summary.map(x=>`<div class="mini"><b>${x[0]}</b><span>${x[1]}</span></div>`).join('')}</div></section>
+<section class="card"><h2 class="sectionTitle">${h.label} 흐름</h2><div class="flow">${h.flow.map(x=>`<div class="node"><div class="ico">${x[0]}</div><b>${x[1]}</b><small>${x[2]}</small></div>`).join('')}</div></section>
 <section class="card"><h2 class="sectionTitle">${h.mapTitle}</h2><div class="mapWrap"><img src="${h.map}" alt="${h.mapTitle}"><div class="caption">${h.mapCaption}</div></div></section>
 <section class="card"><h2 class="sectionTitle">핵심 의미</h2><div class="infoGrid">${h.info.map(x=>`<div class="info"><b>${x[0]}</b><p>${x[1]}</p></div>`).join('')}</div></section>
 <section class="card"><h2 class="sectionTitle">연대 흐름</h2><div class="timeline">${h.timeline.map(x=>`<div class="t ${x[2]?'active':''}"><strong>${x[0]}</strong><span>${x[1]}</span></div>`).join('')}</div></section>
 <div class="note">${h.note}</div>
-<div class="actions">
-  ${h.prev?`<button class="action secondary" data-hub="${h.prev}">← 이전 허브</button>`:`<a class="action secondary" href="../index.html">← Matrix로 돌아가기</a>`}
-  ${h.next?`<button class="action primary" data-hub="${h.next}">다음 허브 →</button>`:`<button class="action primary" id="openHubListBottom" type="button">허브 목록</button>`}
-</div>`}
-function renderPlaceholder(h){
-return `<section class="card placeholder"><h2>${h.title}</h2><p>${h.subtitle}</p><p style="margin-top:10px;font-weight:900;color:#236B63">아직 상세 허브 제작 전입니다. 허브 목록에서 다른 허브로 이동할 수 있습니다.</p></section>
-<div class="actions"><a class="action secondary" href="../index.html">← Matrix로 돌아가기</a><button class="action primary" id="openHubListBottom" type="button">허브 목록</button></div>`}
-function render(){
-  const h=HUBS[slug];
-  renderTabs();
-  renderHeader(h);
-  document.getElementById('content').innerHTML=(h.summary&&h.flow)?renderFullHub(h):renderPlaceholder(h);
-}
-function renderHubList(){
-  document.getElementById('hubGrid').innerHTML=Object.entries(HUBS).map(([k,h])=>`<a class="hubItem" href="?hub=${k}" data-hub="${k}"><strong>${h.order.replace('허브 ','')}</strong><span>${h.short||h.subtitle}</span></a>`).join('');
-}
-function openHubList(){document.getElementById('hubModal').classList.add('show');document.getElementById('hubModal').setAttribute('aria-hidden','false')}
-function closeHubList(){document.getElementById('hubModal').classList.remove('show');document.getElementById('hubModal').setAttribute('aria-hidden','true')}
-document.addEventListener('click',e=>{
-  const hub=e.target.closest('[data-hub]');
-  if(hub&&hub.dataset.hub){
-    e.preventDefault();
-    goHub(hub.dataset.hub);
-    return;
-  }
-  if(e.target.id==='openHubList'||e.target.id==='openHubListBottom'){e.preventDefault();openHubList();}
-  if(e.target.id==='closeHubList'||e.target.id==='hubModal'){e.preventDefault();closeHubList();}
-});
-window.addEventListener('popstate',()=>{const p=new URLSearchParams(location.search);slug=p.get('hub')||'return';if(!HUBS[slug])slug='return';render();});
-renderHubList();
+<div class="actions">${h.prev?`<a class="action secondary" href="?hub=${h.prev}">${h.prevLabel}</a>`:`<a class="action secondary" href="../index.html">← Matrix로 돌아가기</a>`}${h.next?`<a class="action primary" href="?hub=${h.next}">${h.nextLabel}</a>`:`<a class="action primary" href="../index.html">Matrix로 돌아가기</a>`}</div>`}
+function renderPlaceholder(h){return `<section class="card placeholder"><h2>${h.title}</h2><p>${h.subtitle}</p><p style="margin-top:10px;font-weight:900;color:#236B63">아직 상세 허브 제작 전입니다.</p></section><div class="actions">${h.prev?`<a class="action secondary" href="?hub=${h.prev}">${h.prevLabel}</a>`:`<a class="action secondary" href="../index.html">← Matrix로 돌아가기</a>`}${h.next?`<a class="action primary" href="?hub=${h.next}">${h.nextLabel}</a>`:`<a class="action primary" href="../index.html">Matrix로 돌아가기</a>`}</div>`}
+function renderHubList(){document.getElementById('hubList').innerHTML=Object.entries(HUBS).map(([k,h])=>`<a class="hubItem ${k===slug?'active':''}" href="?hub=${k}"><b>${h.order.replace(' · ',' ')}</b><span>${h.short} · ${h.subtitle}</span></a>`).join('')}
+function render(){const h=HUBS[slug];renderTabs();renderHeader(h);renderHubList();document.getElementById('content').innerHTML=h.summary?renderHub(h):renderPlaceholder(h)}
+document.getElementById('hubListBtn').onclick=()=>document.getElementById('drawer').classList.add('show');document.getElementById('drawerClose').onclick=()=>document.getElementById('drawer').classList.remove('show');document.getElementById('drawer').onclick=e=>{if(e.target.id==='drawer')document.getElementById('drawer').classList.remove('show')};
 render();
 if('serviceWorker'in navigator){navigator.serviceWorker.register('./sw.js').catch(()=>{})}
 </script>
