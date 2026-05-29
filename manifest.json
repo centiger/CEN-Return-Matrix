@@ -1,20 +1,26 @@
 {
-  "name": "CEN Matrix 포로귀환",
-  "short_name": "포로귀환 Matrix",
-  "start_url": "./index.html",
-  "display": "standalone",
-  "background_color": "#f4fbf8",
-  "theme_color": "#236B63",
-  "icons": [
+  "note": "This project uses inline HUBS data in hubs/index.html. This JSON is kept only as a reference.",
+  "defaultHub": "return",
+  "hubs": [
     {
-      "src": "icons/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
+      "slug": "return",
+      "title": "귀환 허브"
     },
     {
-      "src": "icons/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png"
+      "slug": "temple",
+      "title": "성전 허브"
+    },
+    {
+      "slug": "esther",
+      "title": "보존 허브"
+    },
+    {
+      "slug": "ezra",
+      "title": "율법 허브"
+    },
+    {
+      "slug": "nehemiah",
+      "title": "성벽 허브"
     }
   ]
 }
