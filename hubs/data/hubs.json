@@ -380,7 +380,7 @@
       "prev": "ezra",
       "next": null,
       "prevLabel": "← 이전 허브: 율법 허브",
-      "nextLabel": "Matrix로 돌아가기",
+      "nextLabel": "예수시대 Matrix로 이동",
       "kicker": "허브 05 · 성벽 허브",
       "heroTitle": "성벽 허브",
       "heroText": "느헤미야의 성벽 재건을 통해 예루살렘 공동체의 외적 질서와 신앙 공동체성이 회복되는 흐름을 탐험합니다.",
@@ -457,8 +457,13 @@
         {
           "label": "Matrix로 돌아가기",
           "url": "../index.html"
+        },
+        {
+          "label": "예수시대 Matrix",
+          "url": "https://centiger.github.io/CEN-Matrix-Jesus/"
         }
-      ]
+      ],
+      "nextUrl": "https://centiger.github.io/CEN-Matrix-Jesus/"
     }
   ]
 }
